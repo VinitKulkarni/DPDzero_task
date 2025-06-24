@@ -1,31 +1,33 @@
 ### Install uv:
-sh ```
+```sh
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
+
 ### To check the uv version:
-sh ```
+```sh
 uv --version
 ```
+
 ### create uv project for flask:
-sh```
+```sh
 uv init service_2
 cd service_2
 ```
 
 ### create requirements file:
-sh```
+```sh
 nano requirements.txt
 and add Flask, gunicorn
 ```
 
 ### To install the requirements to run the flask code:
-sh```
+```sh
 uv add -r requirements.txt
 Edit the main.py as per the wish
 ```
 
 ### Dockerising the project:
-sh```
+```sh
 # create docker network:
 docker create network dpdzero_network
 
@@ -56,7 +58,7 @@ http://localhost:8001/service2/hello
 
 
 ### Docker-compose:
-sh```
+```sh
 docker-compose up -d
 (run in background)
 
@@ -64,4 +66,7 @@ http://localhost:8080/service1/ping
 http://localhost:8001/service1/hello
 http://localhost:8080/service2/ping
 http://localhost:8001/service2/hello
+
+
+docker-compose down (stops the containers)
 ```
