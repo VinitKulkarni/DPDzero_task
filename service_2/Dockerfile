@@ -8,7 +8,7 @@ WORKDIR /app
 
 RUN uv sync --locked  #pip3 install -r requriements.txt
 
-EXPOSE 8000
+EXPOSE 8002
 
-CMD [".venv/bin/gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "main:app"]
+CMD [".venv/bin/gunicorn", "-w", "4", "-b", "0.0.0.0:8002", "main:app"]
 
