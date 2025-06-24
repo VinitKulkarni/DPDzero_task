@@ -70,3 +70,20 @@ http://localhost:8001/service2/hello
 
 docker-compose down (stops the containers)
 ```
+
+### How routing works:
+Once all 3 containers spin up
+
+http://localhost:8080
+You will get default nginx web page
+
+http://localhost:8080/service1/ping
+nginx reverse-proxy will route the traffic to service1-container
+this container contains the code to serve /ping and /hello routes.
+
+
+http://localhost:8080/service2/hello
+it will route the traffic to service2-container
+this container contains the code to server /ping and /hello routes.
+
+![dpdzero_image](https://github.com/user-attachments/assets/8a2f49da-ae88-4654-8301-d5c95e18ab60)
