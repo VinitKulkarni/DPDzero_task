@@ -1,4 +1,17 @@
-services:
+services: 
+  mynginx:
+    build: ./mynginx
+    image: vinitkulkarni/mynginx_image:latest
+    container_name: nginx_container
+    hostname: nginx_container
+    ports:
+      - "8080:8000"
+    networks:
+      - dpdzero_network
+    depends_on:
+      - service_1
+      - service_2
+
   service_1:
     build: ./service_1
     image: vinitkulkarni/service1_image:latest
@@ -16,16 +29,6 @@ services:
     hostname: service2
     ports:
       - "8002:8002"
-    networks:
-      - dpdzero_network
-  
-  mynginx:
-    build: ./mynginx
-    image: vinitkulkarni/mynginx_image:latest
-    container_name: nginx_container
-    hostname: nginx_container
-    ports:
-      - "8080:8000"
     networks:
       - dpdzero_network
 
